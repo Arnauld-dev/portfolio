@@ -16,7 +16,7 @@
        $stmt = $db->prepare('INSERT INTO projects (title, description, image, link_git, link_live, category) VALUES (?, ?, ?, ?, ?, ?)');
        $stmt->execute([$title, $description, $image, $link_git, $link_live, $category]);
 
-       header('Location: project.php');
+       header('Location: add_edit.php');
        exit();
    };
 
@@ -30,22 +30,18 @@
     <title>Add/Edit Project</title>
 </head>
 <body>
-    <div>
+    <div class="container-project">
         <div>
         <?php include __DIR__ .'/../../includes/sidebar.php'; ?>
 
         </div>
-        <div>
+        <div class="main-content">
             <form action="" method="POST">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required><br>
+                <label for="title" >Title:</label>
+                <input type="text" id="title" name="title" required ><br>
 
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea><br>
-
-                <label for="image">Image URL:</label>
-                <input type="text" id="image" name="image"><br>
-
                 <label for="link_git">GitHub Link:</label>
                 <input type="text" id="link_git" name="link_git"><br>
 
@@ -54,8 +50,10 @@
 
                 <label for="category">Category:</label>
                 <input type="text" id="category" name="category"><br>
+                <label for="image">Image URL:</label>
+                <input type="file" id="image" name="image"><br>
 
-                <input type="submit" value="Save Project">
+                <button type="submit">Save Project</button>
             </form>
         </div>
     </div>
