@@ -18,10 +18,10 @@
                 
             </div>
             <div class="links">
-                
-                    <a href="settings.php">Projet</a>
-                    <a href="users.php">User Management</a>
-                    <a href="Messages.php">Message</a>
+                    
+                    <a href="project.php">Projet <span>2</span></a>
+                    <a href="users.php">User Management <span>2</span></a>
+                    <a href="Messages.php">Message <span>3</span></a>
                 
             </div>
         </div>
