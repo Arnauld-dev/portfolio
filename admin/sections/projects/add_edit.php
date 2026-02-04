@@ -1,3 +1,26 @@
+<?php
+        try{
+            $db = new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8', 'root', '');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        };
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+       $title = $_POST['title'];
+       $description = $_POST['description'];
+       $image = $_POST['image'];
+       $link_git = $_POST['link_git'];
+       $link_live = $_POST['link_live'];
+       $category = $_POST['category'];
+
+       $stmt = $db->prepare('INSERT INTO projects (title, description, image, link_git, link_live, category) VALUES (?, ?, ?, ?, ?, ?)');
+       $stmt->execute([$title, $description, $image, $link_git, $link_live, $category]);
+
+       header('Location: project.php');
+       exit();
+   };
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +30,35 @@
     <title>Add/Edit Project</title>
 </head>
 <body>
-    <?php include __DIR__ .'/../../includes/sidebar.php'; ?>
+    <div>
+        <div>
+        <?php include __DIR__ .'/../../includes/sidebar.php'; ?>
+
+        </div>
+        <div>
+            <form action="" method="POST">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea><br>
+
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" name="image"><br>
+
+                <label for="link_git">GitHub Link:</label>
+                <input type="text" id="link_git" name="link_git"><br>
+
+                <label for="link_live">Live Link:</label>
+                <input type="text" id="link_live" name="link_live"><br>
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category"><br>
+
+                <input type="submit" value="Save Project">
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

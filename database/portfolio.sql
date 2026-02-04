@@ -66,6 +66,8 @@ CREATE TABLE `projects` (
   `category` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `projects` (`id`, `title`, `description`, `image`, `link_git`, `link_live`, `category`, `created_at`) VALUES
+(1, 'Portfolio Personnel', 'Un site web pour présenter mes projets et compétences en développement web.', 'portfolio1.png', '
 
 -- --------------------------------------------------------
 
