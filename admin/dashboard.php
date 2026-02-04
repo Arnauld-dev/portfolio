@@ -7,21 +7,23 @@
     
     <title>Document</title>
 </head>
-<body>
+<body class="body-dashboard">
     <div class="container">
         <div>
         <?php include __DIR__ .'/includes/sidebar.php'; ?>
         </div>
-        <div>
-            <div>
-            <h1>Admin Dashboard</h1>
-            
-        </div>
-        <div>
-            <a href="settings.php">Projet</a>
-            <a href="users.php">User Management</a>
-            <a href="Messages.php">Message</a>
-        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Admin Dashboard</h1>
+                
+            </div>
+            <div class="links">
+                
+                    <a href="settings.php">Projet</a>
+                    <a href="users.php">User Management</a>
+                    <a href="Messages.php">Message</a>
+                
+            </div>
         </div>
     </div>
     

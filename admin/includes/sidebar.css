@@ -60,4 +60,28 @@ li:hover{
     
     gap: 300px; 
 }
+.main-content{
+    display: flex;
+    flex-direction: column;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    align-items: center; 
+}
+.links a{
+    text-decoration: none;
+    color: black;
+    background-color:white;
+    border: #818282 solid 1px;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    height: 100px;
+    width: 200px;
+}
+.body-dashboard{
+    background-color: #e2e0e0;
+}
 
